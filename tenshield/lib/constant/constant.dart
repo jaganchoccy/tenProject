@@ -4,8 +4,8 @@ import './size_config.dart';
 const appUrl = "http://tenshield.today:3333";
 
 ///#08744d
-const XPrimaryColor = Color.fromARGB(0xFF, 8, 116, 77);
-const XPrimaryColorBorder = Color.fromARGB(0xFF, 27, 92, 67);
+const XPrimaryColor = Color.fromARGB(255, 169, 172, 171);
+const XPrimaryColorBorder = Color.fromARGB(255, 55, 58, 57);
 //Color.fromARGB(0xFF, 0, 112, 74);
 //Color.fromARGB(0xFF, 0, 112, 74);
 //
@@ -24,7 +24,7 @@ const XPrimaryLightColor = Color.fromARGB(0xFF, 0, 112, 74);
 const XBackGroundColor = Color.fromARGB(0xFF, 247, 247, 247);
 const Color transparent = Color(0x00000000);
 
-const XGrey = Color(0xFF757575);
+const XGrey = Color.fromARGB(255, 146, 143, 143);
 const XRed = Color.fromARGB(0xFF, 222, 38, 32);
 const XBlack = Color.fromARGB(255, 0, 0, 0);
 const XWhite = Color.fromARGB(255, 255, 255, 255);

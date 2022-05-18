@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tenshield/Components/default_button.dart';
 import 'package:tenshield/Components/snackBar.dart';
+import 'package:tenshield/Screen/home/home_screen.dart';
 import 'package:tenshield/Services/auth.dart';
 
 import 'package:tenshield/components/providerState.dart';
@@ -118,6 +119,15 @@ class _SignUpFormState extends State<SignUpForm> {
                   ),
                 ),
           SizedBox(height: getProportionateScreenHeight(15)),
+          TextButton(
+              onPressed: () {
+                Navigator.of(context).pushAndRemoveUntil(
+                    MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            HomeScreen(currentUser: '', homeIndexPage: 0)),
+                    (Route<dynamic> route) => false);
+              },
+              child: Text('dummy go to home page'))
         ],
       ),
     );
@@ -142,34 +152,34 @@ class _SignUpFormState extends State<SignUpForm> {
       decoration: InputDecoration(
         errorStyle: TextStyle(color: XGrey),
         focusedErrorBorder: new OutlineInputBorder(
-          borderSide: new BorderSide(color: (Colors.grey[200])!),
+          borderSide: new BorderSide(color: (Colors.grey[800])!),
           borderRadius: const BorderRadius.all(
             const Radius.circular(6.0),
           ),
         ),
         isDense: true,
-        fillColor: Colors.grey[200],
+        fillColor: Colors.grey[800],
         filled: true,
         border: new OutlineInputBorder(
-          borderSide: new BorderSide(color: (Colors.grey[200])!),
+          borderSide: new BorderSide(color: (Colors.grey[800])!),
           borderRadius: const BorderRadius.all(
             const Radius.circular(6.0),
           ),
         ),
         errorBorder: new OutlineInputBorder(
-          borderSide: new BorderSide(color: (Colors.grey[200])!),
+          borderSide: new BorderSide(color: (Colors.grey[800])!),
           borderRadius: const BorderRadius.all(
             const Radius.circular(6.0),
           ),
         ),
         focusedBorder: new OutlineInputBorder(
-          borderSide: new BorderSide(color: (Colors.grey[200])!),
+          borderSide: new BorderSide(color: (Colors.grey[800])!),
           borderRadius: const BorderRadius.all(
             const Radius.circular(6.0),
           ),
         ),
         enabledBorder: new OutlineInputBorder(
-          borderSide: new BorderSide(color: (Colors.grey[200])!),
+          borderSide: new BorderSide(color: (Colors.grey[800])!),
           borderRadius: const BorderRadius.all(
             const Radius.circular(6.0),
           ),
@@ -205,34 +215,34 @@ class _SignUpFormState extends State<SignUpForm> {
       decoration: InputDecoration(
         errorStyle: TextStyle(color: XGrey),
         focusedErrorBorder: new OutlineInputBorder(
-          borderSide: new BorderSide(color: (Colors.grey[200])!),
+          borderSide: new BorderSide(color: (Colors.grey[800])!),
           borderRadius: const BorderRadius.all(
             const Radius.circular(6.0),
           ),
         ),
         isDense: true,
-        fillColor: Colors.grey[200],
+        fillColor: Colors.grey[800],
         filled: true,
         border: new OutlineInputBorder(
-          borderSide: new BorderSide(color: (Colors.grey[200])!),
+          borderSide: new BorderSide(color: (Colors.grey[800])!),
           borderRadius: const BorderRadius.all(
             const Radius.circular(6.0),
           ),
         ),
         errorBorder: new OutlineInputBorder(
-          borderSide: new BorderSide(color: (Colors.grey[200])!),
+          borderSide: new BorderSide(color: (Colors.grey[800])!),
           borderRadius: const BorderRadius.all(
             const Radius.circular(6.0),
           ),
         ),
         focusedBorder: new OutlineInputBorder(
-          borderSide: new BorderSide(color: (Colors.grey[200])!),
+          borderSide: new BorderSide(color: (Colors.grey[800])!),
           borderRadius: const BorderRadius.all(
             const Radius.circular(6.0),
           ),
         ),
         enabledBorder: new OutlineInputBorder(
-          borderSide: new BorderSide(color: (Colors.grey[200])!),
+          borderSide: new BorderSide(color: (Colors.grey[800])!),
           borderRadius: const BorderRadius.all(
             const Radius.circular(6.0),
           ),
@@ -269,34 +279,34 @@ class _SignUpFormState extends State<SignUpForm> {
       decoration: InputDecoration(
         errorStyle: TextStyle(color: XGrey),
         focusedErrorBorder: new OutlineInputBorder(
-          borderSide: new BorderSide(color: (Colors.grey[200])!),
+          borderSide: new BorderSide(color: (Colors.grey[800])!),
           borderRadius: const BorderRadius.all(
             const Radius.circular(6.0),
           ),
         ),
         isDense: true,
-        fillColor: Colors.grey[200],
+        fillColor: Colors.grey[800],
         filled: true,
         border: new OutlineInputBorder(
-          borderSide: new BorderSide(color: (Colors.grey[200])!),
+          borderSide: new BorderSide(color: (Colors.grey[800])!),
           borderRadius: const BorderRadius.all(
             const Radius.circular(6.0),
           ),
         ),
         errorBorder: new OutlineInputBorder(
-          borderSide: new BorderSide(color: (Colors.grey[200])!),
+          borderSide: new BorderSide(color: (Colors.grey[800])!),
           borderRadius: const BorderRadius.all(
             const Radius.circular(6.0),
           ),
         ),
         focusedBorder: new OutlineInputBorder(
-          borderSide: new BorderSide(color: (Colors.grey[200])!),
+          borderSide: new BorderSide(color: (Colors.grey[800])!),
           borderRadius: const BorderRadius.all(
             const Radius.circular(6.0),
           ),
         ),
         enabledBorder: new OutlineInputBorder(
-          borderSide: new BorderSide(color: (Colors.grey[200])!),
+          borderSide: new BorderSide(color: (Colors.grey[800])!),
           borderRadius: const BorderRadius.all(
             const Radius.circular(6.0),
           ),
@@ -333,34 +343,34 @@ class _SignUpFormState extends State<SignUpForm> {
       decoration: InputDecoration(
         errorStyle: TextStyle(color: XGrey),
         focusedErrorBorder: new OutlineInputBorder(
-          borderSide: new BorderSide(color: (Colors.grey[200])!),
+          borderSide: new BorderSide(color: (Colors.grey[800])!),
           borderRadius: const BorderRadius.all(
             const Radius.circular(6.0),
           ),
         ),
         isDense: true,
-        fillColor: Colors.grey[200],
+        fillColor: Colors.grey[800],
         filled: true,
         border: new OutlineInputBorder(
-          borderSide: new BorderSide(color: (Colors.grey[200])!),
+          borderSide: new BorderSide(color: (Colors.grey[800])!),
           borderRadius: const BorderRadius.all(
             const Radius.circular(6.0),
           ),
         ),
         errorBorder: new OutlineInputBorder(
-          borderSide: new BorderSide(color: (Colors.grey[200])!),
+          borderSide: new BorderSide(color: (Colors.grey[800])!),
           borderRadius: const BorderRadius.all(
             const Radius.circular(6.0),
           ),
         ),
         focusedBorder: new OutlineInputBorder(
-          borderSide: new BorderSide(color: (Colors.grey[200])!),
+          borderSide: new BorderSide(color: (Colors.grey[800])!),
           borderRadius: const BorderRadius.all(
             const Radius.circular(6.0),
           ),
         ),
         enabledBorder: new OutlineInputBorder(
-          borderSide: new BorderSide(color: (Colors.grey[200])!),
+          borderSide: new BorderSide(color: (Colors.grey[800])!),
           borderRadius: const BorderRadius.all(
             const Radius.circular(6.0),
           ),

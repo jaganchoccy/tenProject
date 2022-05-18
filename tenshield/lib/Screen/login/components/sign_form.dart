@@ -114,34 +114,34 @@ class _SignFormState extends State<SignForm> {
       decoration: InputDecoration(
         errorStyle: TextStyle(color: XGrey),
         focusedErrorBorder: new OutlineInputBorder(
-          borderSide: new BorderSide(color: (Colors.grey[200])!),
+          borderSide: new BorderSide(color: (Colors.grey[800])!),
           borderRadius: const BorderRadius.all(
             const Radius.circular(6.0),
           ),
         ),
         isDense: true,
-        fillColor: Colors.grey[200],
+        fillColor: Colors.grey[800],
         filled: true,
         border: new OutlineInputBorder(
-          borderSide: new BorderSide(color: (Colors.grey[200])!),
+          borderSide: new BorderSide(color: (Colors.grey[800])!),
           borderRadius: const BorderRadius.all(
             const Radius.circular(6.0),
           ),
         ),
         errorBorder: new OutlineInputBorder(
-          borderSide: new BorderSide(color: (Colors.grey[200])!),
+          borderSide: new BorderSide(color: (Colors.grey[800])!),
           borderRadius: const BorderRadius.all(
             const Radius.circular(6.0),
           ),
         ),
         focusedBorder: new OutlineInputBorder(
-          borderSide: new BorderSide(color: (Colors.grey[200])!),
+          borderSide: new BorderSide(color: (Colors.grey[800])!),
           borderRadius: const BorderRadius.all(
             const Radius.circular(6.0),
           ),
         ),
         enabledBorder: new OutlineInputBorder(
-          borderSide: new BorderSide(color: (Colors.grey[200])!),
+          borderSide: new BorderSide(color: (Colors.grey[800])!),
           borderRadius: const BorderRadius.all(
             const Radius.circular(6.0),
           ),
@@ -179,34 +179,34 @@ class _SignFormState extends State<SignForm> {
       decoration: InputDecoration(
         errorStyle: TextStyle(color: XGrey),
         focusedErrorBorder: new OutlineInputBorder(
-          borderSide: new BorderSide(color: (Colors.grey[200])!),
+          borderSide: new BorderSide(color: (Colors.grey[800])!),
           borderRadius: const BorderRadius.all(
             const Radius.circular(6.0),
           ),
         ),
         isDense: true,
-        fillColor: Colors.grey[200],
+        fillColor: Colors.grey[800],
         filled: true,
         border: new OutlineInputBorder(
-          borderSide: new BorderSide(color: (Colors.grey[200])!),
+          borderSide: new BorderSide(color: (Colors.grey[800])!),
           borderRadius: const BorderRadius.all(
             const Radius.circular(6.0),
           ),
         ),
         errorBorder: new OutlineInputBorder(
-          borderSide: new BorderSide(color: (Colors.grey[200])!),
+          borderSide: new BorderSide(color: (Colors.grey[800])!),
           borderRadius: const BorderRadius.all(
             const Radius.circular(6.0),
           ),
         ),
         focusedBorder: new OutlineInputBorder(
-          borderSide: new BorderSide(color: (Colors.grey[200])!),
+          borderSide: new BorderSide(color: (Colors.grey[800])!),
           borderRadius: const BorderRadius.all(
             const Radius.circular(6.0),
           ),
         ),
         enabledBorder: new OutlineInputBorder(
-          borderSide: new BorderSide(color: (Colors.grey[200]!)),
+          borderSide: new BorderSide(color: (Colors.grey[800]!)),
           borderRadius: const BorderRadius.all(
             const Radius.circular(6.0),
           ),

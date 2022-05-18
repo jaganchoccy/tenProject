@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tenshield/Screen/home/home_screen.dart';
 import 'package:tenshield/components/providerState.dart';
+import 'package:tenshield/constant/constant.dart';
 import 'package:tenshield/constant/size_config.dart';
 import 'package:tenshield/services/auth.dart';
 
@@ -35,8 +36,11 @@ class _BodyState extends State<Body> {
                       right: MediaQuery.of(context).size.width / 6),
                   child: Container(
                     width: double.infinity,
-                    child: Image.asset('assets/images/loginImg2.PNG',
-                        fit: BoxFit.cover),
+                    child: SvgPicture.asset(
+                      'assets/ten/undraw_internet_on_the_go_re_vben.svg',
+                      height: getProportionateScreenWidth(180),
+                      width: getProportionateScreenWidth(180),
+                    ),
                   ),
                 ),
               ),
@@ -48,35 +52,29 @@ class _BodyState extends State<Body> {
                     child: Column(
                       children: [
                         Text(
-                          "Join your tribe",
+                          "Welcome to TenShield",
                           style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.black,
+                              fontSize: 30,
+                              color: XWhite,
                               fontWeight: FontWeight.w900),
                         ),
                         SizedBox(
                           height: 5,
                         ),
-                        Text(
-                          "find people with similar interests",
-                          style: TextStyle(
-                              fontSize: 12,
-                              color: Colors.black,
-                              fontWeight: FontWeight.normal),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            "Lorem Ipsum is simply ds been the industry's st asdjkjasd kajsdkjnanknown asdas  printer took a galley of type and scrambled it to make a type specimen book.",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: XGrey,
+                                fontWeight: FontWeight.normal),
+                          ),
                         ),
                       ],
                     ),
                   ),
-                ),
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.white,
-                      offset: Offset(0, -20),
-                      blurRadius: 18,
-                    ),
-                  ],
-                  color: Colors.white,
                 ),
               ),
               SizedBox(height: getProportionateScreenHeight(10)),
@@ -151,7 +149,7 @@ class _BodyState extends State<Body> {
                           ),
                         ),
                       ),
-                    SizedBox(width: 4),
+                    SizedBox(width: 0),
                     Expanded(
                       child: Container(
                         child: ButtonTheme(
@@ -172,6 +170,8 @@ class _BodyState extends State<Body> {
                                   });
                             },
                             style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                                  (Color.fromARGB(255, 43, 42, 42))),
                               shape: MaterialStateProperty.all(
                                   RoundedRectangleBorder(
                                       borderRadius:
@@ -193,7 +193,7 @@ class _BodyState extends State<Body> {
                                       fontFamily: "Roboto",
                                       fontWeight: FontWeight.w400,
                                       fontSize: getProportionateScreenWidth(13),
-                                      color: Colors.black,
+                                      color: XWhite,
                                     ),
                                   ),
                                 ],

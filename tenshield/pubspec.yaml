@@ -109,8 +109,8 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - assets/ten/
     
-
   fonts:
     - family: tenshield
       fonts:

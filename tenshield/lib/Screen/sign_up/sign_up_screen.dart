@@ -13,26 +13,23 @@ class SignUpScreen extends StatelessWidget {
         FocusManager.instance.primaryFocus?.unfocus();
       },
       child: Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading: false,
-          backgroundColor: Colors.white,
-          centerTitle: true,
-          title: Text(
-            "Sign Up",
-            style: TextStyle(
-              fontFamily: "RobotoLight",
-              fontSize: 16,
-              fontWeight: FontWeight.w400,
-              letterSpacing: .2,
-              color: XBlack,
-            ),
-          ),
-        ),
         backgroundColor: Colors.white,
-        body: Body(),
+        body: Container(
+            decoration: new BoxDecoration(
+              gradient: new LinearGradient(
+                begin: Alignment.bottomCenter,
+                //stops: [0.7, 0.7],
+                end: Alignment.topCenter,
+                colors: [
+                  Color.fromARGB(255, 0, 0, 0),
+                  Color.fromARGB(255, 91, 94, 94),
+                ],
+              ),
+            ),
+            child: Body()),
         bottomNavigationBar: BottomAppBar(
           child: Container(
-            color: Colors.white,
+            color: Colors.black,
             child: Padding(
               padding: const EdgeInsets.all(15.0),
               child: Row(
@@ -48,7 +45,7 @@ class SignUpScreen extends StatelessWidget {
                           fontStyle: FontStyle.italic,
                           fontWeight: FontWeight.w400,
                           fontSize: getProportionateScreenWidth(16.0),
-                          color: XBlack),
+                          color: XWhite),
                     ),
                   ),
                 ],

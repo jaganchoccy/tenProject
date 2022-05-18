@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tenshield/Screen/Onboarding/onboardingScreen.dart';
 import 'package:tenshield/Screen/home/home_screen.dart';
 import 'package:tenshield/Screen/login/login_screen.dart';
@@ -12,6 +13,7 @@ import 'package:tenshield/components/providerState.dart';
 import 'package:provider/provider.dart';
 import 'package:tenshield/constant/constant.dart';
 import 'package:tenshield/constant/routes.dart';
+import 'package:tenshield/constant/size_config.dart';
 import 'package:tenshield/constant/theme.dart';
 
 void main() async {
@@ -79,17 +81,10 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return showSp
         ? Center(
-            child: TextLiquidFill(
-              loadDuration: Duration(seconds: 2),
-              text: 'tenshield!',
-              waveColor: Colors.white,
-              textStyle: TextStyle(
-                decoration: TextDecoration.none,
-                fontSize: 40.0,
-                fontFamily: 'tenshield',
-                letterSpacing: 2.0,
-                fontWeight: FontWeight.normal,
-              ),
+            child: Container(
+              width: double.infinity,
+              height: 300,
+              child: Image.asset('assets/images/tenshieldLogo.png'),
             ),
           )
         : load();
@@ -108,53 +103,7 @@ load() {
         case ConnectionState.waiting:
           return Scaffold(
             backgroundColor: XBlack,
-            body: Center(
-              child: Container(
-                width: double.infinity,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: 60.0,
-                      height: 60,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage('assets/icons/tenshieldLogo.png'),
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 2,
-                    ),
-                    RichText(
-                      text: TextSpan(
-                        children: [
-                          TextSpan(
-                            text: "ten",
-                            style: TextStyle(
-                                fontFamily: "ComfortaaM",
-                                color: XWhite,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w600),
-                          ),
-                          WidgetSpan(
-                            child: Text(
-                              "shield",
-                              style: TextStyle(
-                                  fontFamily: "ComfortaaM",
-                                  color: XWhite,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w600),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            body: Center(child: Text('loading..')),
             bottomNavigationBar: Container(
               width: double.infinity,
               height: 50,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tenshield/Screen/Device/addDevice.dart';
 import 'package:tenshield/components/providerState.dart';
 import 'package:tenshield/constant/constant.dart';
 
@@ -87,50 +88,94 @@ class _HomeScreenState extends State<HomeScreen> {
       },
       child: GestureDetector(
         onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
-        child: Scaffold(
-          key: _scaffoldKey,
-          body: PageView(
-            children: [
-              Text(
-                  'datajhgjh jgjh gj jhg hjgkj khfkhkhfkhfkhfkhfkhfkhf khgf k fkhgfkhf kghf khg'),
-              Text(
-                  'datajhgjh jgjh gj jhg hjgkj khfkhkhfkhfkhfkhfkhfkhf khgf k fkhgfkhf kghf khg')
-              //GoogleAdMob(),
-              //MembersScreen(currentUser: widget.currentUser),
-            ],
-            controller: pageController,
-            onPageChanged: whenPagechanged,
-            physics: NeverScrollableScrollPhysics(),
-          ),
-          floatingActionButton: new FloatingActionButton(
-            onPressed: () {},
-            tooltip: 'Increment',
-            child: new Icon(Icons.add),
-            elevation: 4.0,
-          ),
-          bottomNavigationBar: BottomNavigationBar(
-            currentIndex: getPageIndex,
-            selectedFontSize: 12.0,
-            backgroundColor: Colors.white,
-            type: BottomNavigationBarType.fixed,
-            elevation: 5.0,
-            unselectedItemColor: Colors.grey[600],
-            selectedItemColor: Colors.black,
-            showUnselectedLabels: true,
-            selectedIconTheme: IconThemeData(color: XPrimaryColor),
-            unselectedIconTheme: IconThemeData(color: Colors.grey[600]),
-            selectedLabelStyle: TextStyle(color: Colors.black),
-            onTap: onTapchangePage,
-            items: [
-              BottomNavigationBarItem(
-                icon: Icon(Icons.supervised_user_circle),
-                label: 'Club',
+        child: SafeArea(
+          child: Scaffold(
+            key: _scaffoldKey,
+            body: Container(
+              decoration: new BoxDecoration(
+                gradient: new LinearGradient(
+                  begin: Alignment.bottomCenter,
+                  //stops: [0.7, 0.7],
+                  end: Alignment.topCenter,
+                  colors: [
+                    Color.fromARGB(255, 0, 0, 0),
+                    Color.fromARGB(255, 51, 52, 52),
+                  ],
+                ),
               ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.radio_button_unchecked),
-                label: 'Profile',
+              child: PageView(
+                children: [
+                  Text(''),
+                  Text('')
+                  //GoogleAdMob(),
+                  //MembersScreen(currentUser: widget.currentUser),
+                ],
+                controller: pageController,
+                onPageChanged: whenPagechanged,
+                physics: NeverScrollableScrollPhysics(),
               ),
-            ],
+            ),
+            floatingActionButton: Padding(
+              padding: EdgeInsets.only(top: 20),
+              child: SizedBox(
+                height: 70,
+                width: 70,
+                child: FloatingActionButton(
+                  backgroundColor: Colors.transparent,
+                  elevation: 0,
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => AddDeviceScreen()),
+                    );
+                  },
+                  child: Container(
+                    height: 70,
+                    width: 70,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.white, width: 4),
+                      shape: BoxShape.circle,
+                      gradient: LinearGradient(
+                        begin: const Alignment(0.7, -0.5),
+                        end: const Alignment(0.6, 0.5),
+                        colors: [
+                          Color(0xFF53a78c),
+                          Color(0xFF70d88b),
+                        ],
+                      ),
+                    ),
+                    child: Icon(Icons.add, size: 30),
+                  ),
+                ),
+              ),
+            ),
+            floatingActionButtonLocation:
+                FloatingActionButtonLocation.centerDocked,
+            bottomNavigationBar: BottomNavigationBar(
+              currentIndex: getPageIndex,
+              selectedFontSize: 12.0,
+              backgroundColor: Colors.black,
+              type: BottomNavigationBarType.fixed,
+              elevation: 5.0,
+              unselectedItemColor: Colors.grey[600],
+              selectedItemColor: Colors.white,
+              showUnselectedLabels: true,
+              selectedIconTheme: IconThemeData(color: XPrimaryColor),
+              unselectedIconTheme: IconThemeData(color: Colors.grey[600]),
+              selectedLabelStyle: TextStyle(color: Colors.white),
+              onTap: onTapchangePage,
+              items: [
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.home),
+                  label: 'Home',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.supervised_user_circle),
+                  label: 'Profile',
+                ),
+              ],
+            ),
           ),
         ),
       ),

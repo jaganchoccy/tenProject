@@ -11,7 +11,7 @@ class NoAccountText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      color: XBlack,
       child: Padding(
         padding: const EdgeInsets.all(15.0),
         child: GestureDetector(
@@ -26,7 +26,7 @@ class NoAccountText extends StatelessWidget {
                 "Don’t have an account? ",
                 style: TextStyle(
                     fontSize: getProportionateScreenWidth(11),
-                    color: Colors.black,
+                    color: XWhite,
                     fontFamily: 'Roboto',
                     fontStyle: FontStyle.italic),
               ),
@@ -36,7 +36,7 @@ class NoAccountText extends StatelessWidget {
                     fontFamily: 'Roboto',
                     fontWeight: FontWeight.w400,
                     fontSize: getProportionateScreenWidth(13.0),
-                    color: XPrimaryColor),
+                    color: XWhite),
               ),
             ],
           ),

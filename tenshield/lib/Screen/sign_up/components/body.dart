@@ -16,38 +16,38 @@ class Body extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: [
+                  Text(
+                    "Sign Up",
+                    style: TextStyle(
+                        fontSize: 30,
+                        color: XWhite,
+                        fontWeight: FontWeight.w400),
+                  ),
+                  SizedBox(
+                    height: 50,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
-                        width: 45,
-                        height: 45,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('assets/icons/tenshieldLogo.png'),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
                       RichText(
                         text: TextSpan(
                           children: [
                             TextSpan(
-                              text: " x",
+                              text: " ten ",
                               style: TextStyle(
                                   fontFamily: "ComfortaaM",
-                                  color: XBlack,
+                                  color: Color.fromARGB(255, 93, 205, 93),
                                   fontSize: 20,
                                   fontWeight: FontWeight.w600),
                             ),
                             WidgetSpan(
                               child: Text(
-                                "plore!",
+                                "shield",
                                 style: TextStyle(
                                     fontFamily: "ComfortaaM",
-                                    color: XPrimaryColor,
+                                    color: XBlack,
                                     fontSize: 20,
-                                    fontWeight: FontWeight.w400),
+                                    fontWeight: FontWeight.w600),
                               ),
                             ),
                           ],

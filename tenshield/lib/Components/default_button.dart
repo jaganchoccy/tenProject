@@ -19,7 +19,9 @@ class DefaultButton extends StatelessWidget {
       width: double.infinity,
       height: getProportionateScreenHeight(36),
       decoration: BoxDecoration(
-        color: isActive ? XPrimaryColor : XPrimaryColor3,
+        color: isActive
+            ? Color.fromARGB(255, 43, 42, 42)
+            : Color.fromARGB(255, 40, 40, 40),
         borderRadius: BorderRadius.circular(3.0),
         // gradient: LinearGradient(
         //   begin: Alignment.bottomRight,
