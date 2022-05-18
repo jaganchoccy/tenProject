@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:tenshield/Screen/Onboarding/onboardingScreen.dart';
 import 'package:tenshield/Screen/home/home_screen.dart';
 import 'package:tenshield/Screen/login/login_screen.dart';
 import 'package:tenshield/components/providerState.dart';
@@ -130,7 +131,7 @@ load() {
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: "x",
+                            text: "ten",
                             style: TextStyle(
                                 fontFamily: "ComfortaaM",
                                 color: XWhite,
@@ -139,7 +140,7 @@ load() {
                           ),
                           WidgetSpan(
                             child: Text(
-                              "plore!",
+                              "shield",
                               style: TextStyle(
                                   fontFamily: "ComfortaaM",
                                   color: XWhite,
@@ -175,10 +176,11 @@ load() {
           if (snapshot.hasError) {
             return Center(child: Text("Error occured!"));
           } else if (snapshot.hasData) {
+            return OnboardScreen(currentUser: snapshot.data);
             return HomeScreen(currentUser: snapshot.data, homeIndexPage: 0);
             //return Connection();
           } else {
-            return SignInScreen();
+            return OnboardScreen(currentUser: snapshot.data);
             //Timer(Duration(seconds: 4), () => print("5sec"));
           }
       }

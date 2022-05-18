@@ -85,7 +85,7 @@ dev_dependencies:
 flutter_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "assets/icons/XploreLogo.png"
+  image_path: "assets/icons/tenshieldLogo.png"
 
 
   # The "flutter_lints" package below contains a set of recommended lints to

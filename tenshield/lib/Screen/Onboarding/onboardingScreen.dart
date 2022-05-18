@@ -20,116 +20,6 @@ class _OnboardScreenState extends State<OnboardScreen> {
   Widget build(BuildContext context) {
     final onboardingPagesList = [
       PageModel(
-        widget: Container(
-          child: Center(
-            child: Column(
-              children: [
-                SizedBox(
-                  height: getProportionateScreenHeight(80),
-                ),
-                Container(
-                  alignment: Alignment.center,
-                  width: double.infinity,
-                  child: RichText(
-                    text: TextSpan(
-                      children: [
-                        TextSpan(
-                          text: "x",
-                          style: TextStyle(
-                              fontFamily: "ComfortaaM",
-                              color: XBlack,
-                              fontSize: 20,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        WidgetSpan(
-                          child: Text(
-                            "plore!",
-                            style: TextStyle(
-                                fontFamily: "ComfortaaM",
-                                color: XPrimaryColor,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w600),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: getProportionateScreenHeight(40),
-                ),
-                Container(
-                  alignment: Alignment.center,
-                  child: AllConfettiWidget(
-                    child: Container(
-                      width: double.infinity,
-                      child: SvgPicture.asset(
-                        'assets/images/celebrate.svg',
-                        height: 200, //40%
-                        width: 200,
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                RichText(
-                  text: TextSpan(
-                    children: [
-                      TextSpan(
-                        text: "Hey ",
-                        style: TextStyle(
-                          fontSize: 16.0,
-                          wordSpacing: 1,
-                          letterSpacing: 1.2,
-                          fontFamily: 'Roboto',
-                          fontWeight: FontWeight.normal,
-                          color: XBlack,
-                        ),
-                      ),
-                      WidgetSpan(
-                        child: Text(
-                          '${widget.currentUser.fullName} !',
-                          style: TextStyle(
-                            fontSize: 16.0,
-                            wordSpacing: 1,
-                            letterSpacing: 1.2,
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.bold,
-                            color: XBlack,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Container(
-                  width: double.infinity,
-                  child: Text(
-                    'We are so happy to see you here. your support means a lot in creating a great platform for the world. Happy journey with tenshield begins now...!',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: "RobotoLight",
-                      color: XBlack,
-                      fontSize: 15.0,
-                      fontWeight: FontWeight.w100,
-                      height: 1.5,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-      PageModel(
         widget: Column(
           children: [
             SizedBox(
@@ -143,7 +33,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
                 wordSpacing: 1,
                 letterSpacing: 1.2,
                 fontWeight: FontWeight.bold,
-                color: XBlack,
+                color: XWhite,
               ),
             ),
             SizedBox(
@@ -153,7 +43,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
               'Create posts and videos to share your travel experiences.',
               style: TextStyle(
                 fontFamily: "RobotoLight",
-                color: Colors.black,
+                color: XWhite,
                 fontSize: 14.0,
                 letterSpacing: 0.7,
                 height: 1.5,
@@ -189,7 +79,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
                 wordSpacing: 1,
                 letterSpacing: 1.2,
                 fontWeight: FontWeight.bold,
-                color: XBlack,
+                color: XWhite,
               ),
             ),
             SizedBox(
@@ -199,7 +89,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
               'Etenshield a world of tours, activities, and attractions.',
               style: TextStyle(
                 fontFamily: "RobotoLight",
-                color: Colors.black,
+                color: XWhite,
                 fontSize: 14.0,
                 letterSpacing: 0.7,
                 height: 1.5,
@@ -235,7 +125,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
                 wordSpacing: 1,
                 letterSpacing: 1.2,
                 fontWeight: FontWeight.bold,
-                color: XBlack,
+                color: XWhite,
               ),
             ),
             SizedBox(
@@ -245,7 +135,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
               'Create trip, attend meet-ups and events, find your people and make new friends.',
               style: TextStyle(
                 fontFamily: "RobotoLight",
-                color: Colors.black,
+                color: XWhite,
                 fontSize: 14.0,
                 letterSpacing: 0.7,
                 height: 1.5,
@@ -281,7 +171,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
                 wordSpacing: 1,
                 letterSpacing: 1.2,
                 fontWeight: FontWeight.bold,
-                color: XBlack,
+                color: XWhite,
               ),
             ),
             SizedBox(
@@ -291,7 +181,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
               'Find people with similar interests and make new friends.',
               style: TextStyle(
                 fontFamily: "RobotoLight",
-                color: Colors.black,
+                color: XWhite,
                 fontSize: 14.0,
                 letterSpacing: 0.7,
                 height: 1.5,
@@ -316,42 +206,51 @@ class _OnboardScreenState extends State<OnboardScreen> {
     ];
 
     return Scaffold(
-        backgroundColor: XGrey,
         body: Container(
-          child: Center(
-            child: Onboarding(
-              background: Colors.white,
-              proceedButtonStyle: ProceedButtonStyle(
-                  proceedButtonColor: XPrimaryColor,
-                  proceedpButtonText: Text('Get Started',
-                      style: TextStyle(
-                        fontFamily: "RobotoLight",
-                        color: Colors.white,
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.normal,
-                      )),
-                  proceedButtonRoute: (context) {
-                    return Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => HomeScreen(
-                            currentUser: UserChangeNotifier().getCurrentUser!,
-                            homeIndexPage: 0),
-                      ),
-                      (route) => false,
-                    );
-                  }),
-              pages: onboardingPagesList,
-              indicator: Indicator(
-                activeIndicator: ActiveIndicator(color: XBlack),
-                indicatorDesign: IndicatorDesign.line(
-                  lineDesign: LineDesign(
-                    lineType: DesignType.line_nonuniform,
+      decoration: new BoxDecoration(
+          gradient: new LinearGradient(
+        begin: Alignment.bottomCenter,
+        stops: [0.1, 0.4, 0.7],
+        end: Alignment.topCenter,
+        colors: [
+          Color.fromARGB(255, 0, 0, 0),
+          Color.fromARGB(255, 125, 129, 129),
+          Color.fromARGB(255, 0, 0, 0),
+        ],
+      )),
+      child: Center(
+        child: Onboarding(
+          proceedButtonStyle: ProceedButtonStyle(
+              proceedButtonColor: XPrimaryColor,
+              proceedpButtonText: Text('Get Started',
+                  style: TextStyle(
+                    fontFamily: "RobotoLight",
+                    color: Colors.white,
+                    fontSize: 14.0,
+                    fontWeight: FontWeight.normal,
+                  )),
+              proceedButtonRoute: (context) {
+                return Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HomeScreen(
+                        currentUser: UserChangeNotifier().getCurrentUser!,
+                        homeIndexPage: 0),
                   ),
-                ),
+                  (route) => false,
+                );
+              }),
+          pages: onboardingPagesList,
+          indicator: Indicator(
+            activeIndicator: ActiveIndicator(color: XWhite),
+            indicatorDesign: IndicatorDesign.line(
+              lineDesign: LineDesign(
+                lineType: DesignType.line_nonuniform,
               ),
             ),
           ),
-        ));
+        ),
+      ),
+    ));
   }
 }

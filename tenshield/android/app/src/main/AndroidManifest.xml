@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.tenshield">
+    package="com.tenshield.tenshield">
    <application
         android:label="tenshield"
         android:name="${applicationName}"

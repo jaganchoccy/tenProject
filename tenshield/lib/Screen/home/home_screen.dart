@@ -91,8 +91,10 @@ class _HomeScreenState extends State<HomeScreen> {
           key: _scaffoldKey,
           body: PageView(
             children: [
-              Text('data'),
-              Text('data')
+              Text(
+                  'datajhgjh jgjh gj jhg hjgkj khfkhkhfkhfkhfkhfkhfkhf khgf k fkhgfkhf kghf khg'),
+              Text(
+                  'datajhgjh jgjh gj jhg hjgkj khfkhkhfkhfkhfkhfkhfkhf khgf k fkhgfkhf kghf khg')
               //GoogleAdMob(),
               //MembersScreen(currentUser: widget.currentUser),
             ],

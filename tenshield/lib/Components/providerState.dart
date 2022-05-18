@@ -14,6 +14,7 @@ class UserChangeNotifier extends ChangeNotifier {
   }
 
   Future getUserInfo() async {
+    return true;
     // final uid = firebase.getCurrentUid();
     // try {
     //   if (uid != null) {
