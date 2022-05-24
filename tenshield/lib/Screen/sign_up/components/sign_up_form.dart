@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:tenshield/Components/default_button.dart';
 import 'package:tenshield/Components/snackBar.dart';
+import 'package:tenshield/Model/user_model.dart';
 import 'package:tenshield/Screen/home/home_screen.dart';
 import 'package:tenshield/Services/auth.dart';
+import 'package:tenshield/Services/firestore.dart';
 
 import 'package:tenshield/components/providerState.dart';
 
@@ -19,6 +21,7 @@ class _SignUpFormState extends State<SignUpForm> {
   final firebase = FirebaseService();
   final _formKey = GlobalKey<FormState>();
   late String userName;
+  late String phone;
   late String email;
   late String password;
   late String confirmPassword;
@@ -36,6 +39,8 @@ class _SignUpFormState extends State<SignUpForm> {
           buildUserNameFormField(),
           SizedBox(height: getProportionateScreenHeight(15)),
           buildEmailFormField(),
+          SizedBox(height: getProportionateScreenHeight(15)),
+          buildPhoneFormField(),
           SizedBox(height: getProportionateScreenHeight(15)),
           buildPasswordFormField(),
           SizedBox(height: getProportionateScreenHeight(15)),
@@ -82,6 +87,29 @@ class _SignUpFormState extends State<SignUpForm> {
                           loadSnackBar(context,
                               'something went wrong, please check your network');
                         } else {
+                          UserModel userdetail = new UserModel();
+                          FireStoreService.createUser(
+                                  mail: res.user.email,
+                                  phoneNumber: this.phone,
+                                  userName: this.userName,
+                                  uid: res.user.uid)
+                              .then((value) => {
+                                    userdetail.userName = this.userName,
+                                    userdetail.mail = res.user.email,
+                                    userdetail.phoneNumber = this.phone,
+                                    userdetail.uid = res.user.uid,
+                                    UserChangeNotifier().setCurrentUser =
+                                        userdetail,
+                                    loadSnackBar(context,
+                                        'Account created successfully'),
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => HomeScreen(
+                                                  homeIndexPage: 0,
+                                                )))
+                                  });
+
                           // Auth()
                           //     .registerUser(res.user, this.userName)
                           //     .then((result) => {
@@ -118,16 +146,6 @@ class _SignUpFormState extends State<SignUpForm> {
                     ),
                   ),
                 ),
-          SizedBox(height: getProportionateScreenHeight(15)),
-          TextButton(
-              onPressed: () {
-                Navigator.of(context).pushAndRemoveUntil(
-                    MaterialPageRoute(
-                        builder: (BuildContext context) =>
-                            HomeScreen(currentUser: '', homeIndexPage: 0)),
-                    (Route<dynamic> route) => false);
-              },
-              child: Text('dummy go to home page'))
         ],
       ),
     );
@@ -135,7 +153,7 @@ class _SignUpFormState extends State<SignUpForm> {
 
   TextFormField buildConformPassFormField() {
     return TextFormField(
-      style: TextStyle(fontSize: 14, color: Colors.black),
+      style: TextStyle(fontSize: 14, color: XWhite),
       obscureText: true,
       onSaved: (newValue) => confirmPassword = newValue as String,
       onChanged: (value) {
@@ -198,7 +216,7 @@ class _SignUpFormState extends State<SignUpForm> {
 
   TextFormField buildPasswordFormField() {
     return TextFormField(
-      style: TextStyle(fontSize: 14, color: Colors.black),
+      style: TextStyle(fontSize: 14, color: XWhite),
       obscureText: true,
       onSaved: (newValue) => password = newValue as String,
       onChanged: (value) {
@@ -261,7 +279,7 @@ class _SignUpFormState extends State<SignUpForm> {
 
   TextFormField buildEmailFormField() {
     return TextFormField(
-      style: TextStyle(fontSize: 14, color: Colors.black),
+      style: TextStyle(fontSize: 14, color: XWhite),
       keyboardType: TextInputType.emailAddress,
       onSaved: (newValue) => email = newValue as String,
       onChanged: (value) {
@@ -325,20 +343,18 @@ class _SignUpFormState extends State<SignUpForm> {
 
   buildUserNameFormField() {
     return TextFormField(
-      style: TextStyle(fontSize: 14, color: Colors.black),
+      style: TextStyle(fontSize: 14, color: XWhite),
       onSaved: (newValue) => userName = newValue as String,
       onChanged: (value) {
         userName = value;
         return null;
       },
-      maxLength: 15,
+      maxLength: 12,
       validator: (value) {
         if (value!.isEmpty) {
           return XNamelNullError;
         }
-        return value.length < 4
-            ? 'Name must be greater than four characters'
-            : null;
+        return value.length < 4 ? 'Name must be greater than 4 letter' : null;
       },
       decoration: InputDecoration(
         errorStyle: TextStyle(color: XGrey),
@@ -375,7 +391,70 @@ class _SignUpFormState extends State<SignUpForm> {
             const Radius.circular(6.0),
           ),
         ),
-        labelText: "User Name *",
+        labelText: "UserName *",
+        contentPadding:
+            new EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+        labelStyle: TextStyle(color: XGrey, fontFamily: "Roboto", fontSize: 13),
+
+        // If  you are using latest version of flutter then lable text and hint text shown like this
+        // if you r using flutter less then 1.20.* then maybe this is not working properly
+        floatingLabelBehavior: FloatingLabelBehavior.never,
+      ),
+    );
+  }
+
+  buildPhoneFormField() {
+    return TextFormField(
+      keyboardType: TextInputType.number,
+      style: TextStyle(fontSize: 14, color: XWhite),
+      onSaved: (newValue) => phone = newValue as String,
+      onChanged: (value) {
+        phone = value;
+        return null;
+      },
+      maxLength: 12,
+      validator: (value) {
+        if (value!.isEmpty) {
+          return XNamelNullError;
+        }
+        return value.length < 10 ? 'Name must be greater than 10 number' : null;
+      },
+      decoration: InputDecoration(
+        errorStyle: TextStyle(color: XGrey),
+        focusedErrorBorder: new OutlineInputBorder(
+          borderSide: new BorderSide(color: (Colors.grey[800])!),
+          borderRadius: const BorderRadius.all(
+            const Radius.circular(6.0),
+          ),
+        ),
+        isDense: true,
+        fillColor: Colors.grey[800],
+        filled: true,
+        border: new OutlineInputBorder(
+          borderSide: new BorderSide(color: (Colors.grey[800])!),
+          borderRadius: const BorderRadius.all(
+            const Radius.circular(6.0),
+          ),
+        ),
+        errorBorder: new OutlineInputBorder(
+          borderSide: new BorderSide(color: (Colors.grey[800])!),
+          borderRadius: const BorderRadius.all(
+            const Radius.circular(6.0),
+          ),
+        ),
+        focusedBorder: new OutlineInputBorder(
+          borderSide: new BorderSide(color: (Colors.grey[800])!),
+          borderRadius: const BorderRadius.all(
+            const Radius.circular(6.0),
+          ),
+        ),
+        enabledBorder: new OutlineInputBorder(
+          borderSide: new BorderSide(color: (Colors.grey[800])!),
+          borderRadius: const BorderRadius.all(
+            const Radius.circular(6.0),
+          ),
+        ),
+        labelText: "Phone Number *",
         contentPadding:
             new EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
         labelStyle: TextStyle(color: XGrey, fontFamily: "Roboto", fontSize: 13),

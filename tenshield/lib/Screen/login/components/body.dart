@@ -30,17 +30,11 @@ class _BodyState extends State<Body> {
             children: [
               Expanded(
                 child: Padding(
-                  padding: EdgeInsets.only(
-                      top: 0,
-                      left: MediaQuery.of(context).size.width / 6,
-                      right: MediaQuery.of(context).size.width / 6),
+                  padding: EdgeInsets.only(),
                   child: Container(
                     width: double.infinity,
-                    child: SvgPicture.asset(
-                      'assets/ten/undraw_internet_on_the_go_re_vben.svg',
-                      height: getProportionateScreenWidth(180),
-                      width: getProportionateScreenWidth(180),
-                    ),
+                    height: 150,
+                    child: Image.asset('assets/ten/Atom.png'),
                   ),
                 ),
               ),
@@ -102,11 +96,7 @@ class _BodyState extends State<Body> {
                                       Navigator.of(context).pushReplacement(
                                         MaterialPageRoute(
                                           builder: (BuildContext context) {
-                                            return HomeScreen(
-                                                currentUser:
-                                                    UserChangeNotifier()
-                                                        .getCurrentUser!,
-                                                homeIndexPage: 0);
+                                            return HomeScreen(homeIndexPage: 0);
                                           },
                                         ),
                                       )
@@ -157,16 +147,15 @@ class _BodyState extends State<Body> {
                           child: OutlinedButton(
                             onPressed: () {
                               firebase.signInWithGoogle().then((cUser) => {
-                                    currentUser = cUser!,
-                                    Navigator.of(context).pushReplacement(
-                                      MaterialPageRoute(
-                                          builder: (BuildContext context) {
-                                        return HomeScreen(
-                                            currentUser: UserChangeNotifier()
-                                                .getCurrentUser!,
-                                            homeIndexPage: 0);
-                                      }),
-                                    )
+                                    if (cUser != null)
+                                      {
+                                        Navigator.of(context).pushReplacement(
+                                          MaterialPageRoute(
+                                              builder: (BuildContext context) {
+                                            return HomeScreen(homeIndexPage: 0);
+                                          }),
+                                        )
+                                      }
                                   });
                             },
                             style: ButtonStyle(

@@ -1,4 +1,4 @@
-package com.tenshield.tenshield
+package com.company.tenshield
 
 import io.flutter.embedding.android.FlutterActivity
 

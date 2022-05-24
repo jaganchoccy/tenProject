@@ -4,6 +4,8 @@ import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tenshield/Components/providerState.dart';
+import 'package:tenshield/Model/user_model.dart';
+import 'package:tenshield/Services/firestore.dart';
 import 'package:tenshield/helper/sharedPre.dart';
 
 final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
@@ -47,8 +49,13 @@ class FirebaseService {
       //await Auth().login(userDetails.uid);
       // cUser = await UserController()
       //     .getUserById(userDetails.uid); //get all user data from backend
-      //UserChangeNotifier().setCurrentUser = cUser!;
-      //return cUser;
+      var userdetail = new UserModel();
+      userdetail.userName = userDetails.displayName;
+      userdetail.mail = userDetails.email;
+      userdetail.phoneNumber = userDetails.phoneNumber;
+      userdetail.uid = userDetails.uid;
+      UserChangeNotifier().setCurrentUser = userdetail;
+      return userdetail;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         return e.code;
@@ -127,6 +134,7 @@ class FirebaseService {
 
   //forget password
   forgetPassword(email) async {
+    print(email);
     try {
       await firebaseAuth.sendPasswordResetEmail(email: email).then((res) {
         return res;
@@ -159,6 +167,11 @@ class FirebaseService {
       //   cUser = await UserController().getUserById(userDetails?.uid);
       // });
     }
+    FireStoreService.createUser(
+        mail: userDetails?.email,
+        phoneNumber: '',
+        uid: userDetails?.uid,
+        userName: userDetails?.displayName);
 
     SharedPreferenceHelper().saveUserEmail(userDetails?.email);
     SharedPreferenceHelper().saveUserId(userDetails?.uid);
@@ -166,7 +179,13 @@ class FirebaseService {
         .saveUserName(userDetails?.email?.replaceAll("@gmail.com", ""));
     SharedPreferenceHelper().saveDisplayName(userDetails?.displayName);
     SharedPreferenceHelper().saveUserProfileUrl(userDetails?.photoURL);
-    return cUser;
+    var userdetail = new UserModel();
+    userdetail.userName = userDetails?.displayName;
+    userdetail.mail = userDetails?.email;
+    userdetail.phoneNumber = '';
+    userdetail.uid = userDetails?.uid;
+    UserChangeNotifier().setCurrentUser = userdetail;
+    return userdetail;
   }
 
   Future signInWithApple() async {

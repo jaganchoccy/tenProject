@@ -19,44 +19,20 @@ class Body extends StatelessWidget {
                   Text(
                     "Sign Up",
                     style: TextStyle(
-                        fontSize: 30,
-                        color: XWhite,
+                        fontSize: 20,
+                        color: Colors.white24,
                         fontWeight: FontWeight.w400),
-                  ),
-                  SizedBox(
-                    height: 50,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      RichText(
-                        text: TextSpan(
-                          children: [
-                            TextSpan(
-                              text: " ten ",
-                              style: TextStyle(
-                                  fontFamily: "ComfortaaM",
-                                  color: Color.fromARGB(255, 93, 205, 93),
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w600),
-                            ),
-                            WidgetSpan(
-                              child: Text(
-                                "shield",
-                                style: TextStyle(
-                                    fontFamily: "ComfortaaM",
-                                    color: XBlack,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w600),
-                              ),
-                            ),
-                          ],
-                        ),
+                      Container(
+                        width: 250,
+                        height: 100,
+                        child: Image.asset(
+                            'assets/ten/TenshieldLogo_Transparentbackground.png'),
                       ),
                     ],
-                  ),
-                  SizedBox(
-                    height: 20,
                   ),
                   SignUpForm(),
                 ],

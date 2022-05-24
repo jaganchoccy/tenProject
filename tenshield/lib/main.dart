@@ -82,9 +82,10 @@ class _SplashScreenState extends State<SplashScreen> {
     return showSp
         ? Center(
             child: Container(
-              width: double.infinity,
-              height: 300,
-              child: Image.asset('assets/images/tenshieldLogo.png'),
+              width: 250,
+              height: 250,
+              child: Image.asset(
+                  'assets/ten/TenshieldLogo_Transparentbackground.png'),
             ),
           )
         : load();
@@ -126,7 +127,7 @@ load() {
             return Center(child: Text("Error occured!"));
           } else if (snapshot.hasData) {
             return OnboardScreen(currentUser: snapshot.data);
-            return HomeScreen(currentUser: snapshot.data, homeIndexPage: 0);
+            //return HomeScreen(currentUser: snapshot.data, homeIndexPage: 0);
             //return Connection();
           } else {
             return OnboardScreen(currentUser: snapshot.data);

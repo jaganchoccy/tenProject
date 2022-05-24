@@ -1,33 +1,42 @@
 {
   "project_info": {
-    "project_number": "378095832914",
-    "project_id": "tenshield-b6bb3",
-    "storage_bucket": "tenshield-b6bb3.appspot.com"
+    "project_number": "684979790718",
+    "firebase_url": "https://tenshieldapp-default-rtdb.firebaseio.com",
+    "project_id": "tenshieldapp",
+    "storage_bucket": "tenshieldapp.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:378095832914:android:82800a83f9925b92d4f48b",
+        "mobilesdk_app_id": "1:684979790718:android:6cae25340dd0d9adf4492f",
         "android_client_info": {
-          "package_name": "com.tenshield.tenshield"
+          "package_name": "com.company.tenshield"
         }
       },
       "oauth_client": [
         {
-          "client_id": "378095832914-0gnlg10cs0a7lmkc6edau566v43ip6jp.apps.googleusercontent.com",
+          "client_id": "684979790718-dd1cu5nl9d3gfn9hlrcokv31j6b39rvc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.company.tenshield",
+            "certificate_hash": "ce4490115fe8c836b4e79924111b154d61eec714"
+          }
+        },
+        {
+          "client_id": "684979790718-mlv2p5362800gi8ma4g00pjigp0tthah.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDYzGAGOM5CWUU_c2kBCUIvnAO5OM6EQ3w"
+          "current_key": "AIzaSyA3XsH9yxxmv3p1g8AFaxyEh0lIBFlo1Tw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "378095832914-0gnlg10cs0a7lmkc6edau566v43ip6jp.apps.googleusercontent.com",
+              "client_id": "684979790718-mlv2p5362800gi8ma4g00pjigp0tthah.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

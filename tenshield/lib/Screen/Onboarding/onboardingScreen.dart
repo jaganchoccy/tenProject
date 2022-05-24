@@ -24,10 +24,10 @@ class _OnboardScreenState extends State<OnboardScreen> {
         widget: Column(
           children: [
             SizedBox(
-              height: 50,
+              height: 40,
             ),
             Text(
-              'SHARE YOUR EXPERIENCE.',
+              'Activate Air Security',
               style: TextStyle(
                 fontFamily: "RobotoLight",
                 fontSize: 22.0,
@@ -40,20 +40,77 @@ class _OnboardScreenState extends State<OnboardScreen> {
             SizedBox(
               height: 20,
             ),
+            Text(
+              ' Uncompromising air security for every space',
+              style: TextStyle(
+                fontFamily: "RobotoLight",
+                fontSize: 18.0,
+                wordSpacing: 1,
+                letterSpacing: 1.2,
+                fontWeight: FontWeight.normal,
+                color: XWhite,
+              ),
+            ),
             Container(
-              width: double.infinity,
-              height: 300,
-              child: SvgPicture.asset(
-                'assets/ten/undraw_progress_overview_re_tvcl.svg',
-                height: getProportionateScreenWidth(180),
-                width: getProportionateScreenWidth(180),
+              width: 250,
+              height: 250,
+              child: Image.asset(
+                  'assets/ten/TenshieldLogo_Transparentbackground.png'),
+            ),
+            Text(
+              'For the best quality of life, the air we breathe must be the purest as possible. According to WHO, air pollution is one of the most serious environmental hazards to human health. Getting hands on an efficient air purifier or sterilizer is one of the most guaranteed ways to remove all sources of pollutants, clean the interior air, improve indoor air quality, and upgrade air security.',
+              style: TextStyle(
+                fontFamily: "RobotoLight",
+                color: XWhite,
+                fontSize: 15.0,
+                letterSpacing: 0.7,
+                height: 1.5,
               ),
             ),
             SizedBox(
-              height: 20,
+              height: 30,
+            ),
+          ],
+        ),
+      ),
+      PageModel(
+        widget: Column(
+          children: [
+            SizedBox(
+              height: 30,
             ),
             Text(
-              'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+              'Pollution knows no boundaries',
+              style: TextStyle(
+                fontFamily: "RobotoLight",
+                fontSize: 22.0,
+                wordSpacing: 1,
+                letterSpacing: 1.2,
+                fontWeight: FontWeight.bold,
+                color: XWhite,
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              'Get world-class air security with Tenshield',
+              style: TextStyle(
+                fontFamily: "RobotoLight",
+                fontSize: 18.0,
+                wordSpacing: 1,
+                letterSpacing: 1.2,
+                fontWeight: FontWeight.normal,
+                color: XWhite,
+              ),
+            ),
+            Container(
+              width: double.infinity,
+              height: 200,
+              child: Image.asset('assets/ten/Atom.png'),
+            ),
+            Text(
+              'Clean air is essential for a healthy human life, nonetheless, it required a global pandemic to finally shed a focus on the quality of indoor air, which was already in crisis even before to COVID-19. We may not be able to see it, but our indoor air contains harmful levels of invisible particulates. Poor indoor air quality can be caused by airborne particles such as dust, pollutants, and pathogens is estimated to cause 3.8 million premature deaths each year, with an untold number of us suffering from harm to wellbeing every day, simply as a result of the air we breathe.',
               style: TextStyle(
                 fontFamily: "RobotoLight",
                 color: XWhite,
@@ -72,36 +129,18 @@ class _OnboardScreenState extends State<OnboardScreen> {
         widget: Column(
           children: [
             SizedBox(
-              height: 50,
-            ),
-            Text(
-              'TITLE 2.',
-              style: TextStyle(
-                fontFamily: "RobotoLight",
-                fontSize: 22.0,
-                wordSpacing: 1,
-                letterSpacing: 1.2,
-                fontWeight: FontWeight.bold,
-                color: XWhite,
-              ),
-            ),
-            SizedBox(
               height: 20,
             ),
-            Container(
-              width: double.infinity,
-              height: 300,
-              child: SvgPicture.asset(
-                'assets/ten/undraw_pie_graph_re_fvol.svg',
-                height: getProportionateScreenWidth(180),
-                width: getProportionateScreenWidth(180),
+            Padding(
+              padding: const EdgeInsets.only(left: 25.0),
+              child: Container(
+                width: double.infinity,
+                height: 300,
+                child: Image.asset('assets/ten/Sky.png'),
               ),
             ),
-            SizedBox(
-              height: 20,
-            ),
             Text(
-              'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+              'Clean air is essential for a healthy human life, nonetheless, it required a global pandemic to finally shed a focus on the quality of indoor air, which was already in crisis even before to COVID-19. We may not be able to see it, but our indoor air contains harmful levels of invisible particulates. Poor indoor air quality can be caused by airborne particles such as dust, pollutants, and pathogens is estimated to cause 3.8 million premature deaths each year, with an untold number of us suffering from harm to wellbeing every day, simply as a result of the air we breathe.',
               style: TextStyle(
                 fontFamily: "RobotoLight",
                 color: XWhite,
@@ -120,13 +159,13 @@ class _OnboardScreenState extends State<OnboardScreen> {
         widget: Column(
           children: [
             SizedBox(
-              height: 50,
+              height: 20,
             ),
             Text(
-              'TITLE 3.',
+              'Tenshield Atom ',
               style: TextStyle(
                 fontFamily: "RobotoLight",
-                fontSize: 22.0,
+                fontSize: 20.0,
                 wordSpacing: 1,
                 letterSpacing: 1.2,
                 fontWeight: FontWeight.bold,
@@ -134,22 +173,10 @@ class _OnboardScreenState extends State<OnboardScreen> {
               ),
             ),
             SizedBox(
-              height: 20,
-            ),
-            Container(
-              width: double.infinity,
-              height: 300,
-              child: SvgPicture.asset(
-                'assets/ten/undraw_internet_on_the_go_re_vben.svg',
-                height: getProportionateScreenWidth(180),
-                width: getProportionateScreenWidth(180),
-              ),
-            ),
-            SizedBox(
-              height: 20,
+              height: 10,
             ),
             Text(
-              'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+              'Designed for rooms under 2500 cubic feet like your bedroom or living room, Tenshield Atom purifies the air in every room it is placed in, making it a healthier place for your loved ones. Tenshield Atom - 2500 cu ft - AQI - 70 x 60 x 30 mm',
               style: TextStyle(
                 fontFamily: "RobotoLight",
                 color: XWhite,
@@ -158,8 +185,39 @@ class _OnboardScreenState extends State<OnboardScreen> {
                 height: 1.5,
               ),
             ),
+            Container(
+              width: double.infinity,
+              height: 200,
+              child: Image.asset('assets/ten/Atom.png'),
+            ),
+            Text(
+              'Tenshield Sky',
+              style: TextStyle(
+                fontFamily: "RobotoLight",
+                fontSize: 20.0,
+                wordSpacing: 1,
+                letterSpacing: 1.2,
+                fontWeight: FontWeight.bold,
+                color: XWhite,
+              ),
+            ),
             SizedBox(
-              height: 30,
+              height: 10,
+            ),
+            Text(
+              'Using a significantly more powerful ion dispensing technology, TenshieldSky works well for much larger spaces like board rooms, indoor sports arenas, gyms, or places under 15,000 cubic feet.',
+              style: TextStyle(
+                fontFamily: "RobotoLight",
+                color: XWhite,
+                fontSize: 14.0,
+                letterSpacing: 0.7,
+                height: 1.5,
+              ),
+            ),
+            Container(
+              width: double.infinity,
+              height: 150,
+              child: Image.asset('assets/ten/Sky.png'),
             ),
           ],
         ),
@@ -202,7 +260,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
                 }),
             pages: onboardingPagesList,
             indicator: Indicator(
-              activeIndicator: ActiveIndicator(color: XWhite),
+              activeIndicator: ActiveIndicator(color: XBlack),
               indicatorDesign: IndicatorDesign.line(
                 lineDesign: LineDesign(
                   lineType: DesignType.line_nonuniform,

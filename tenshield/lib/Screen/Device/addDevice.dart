@@ -19,6 +19,12 @@ class _AddDeviceScreenState extends State<AddDeviceScreen>
         ..repeat();
 
   @override
+  dispose() {
+    _controller.dispose(); //
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
@@ -59,10 +65,10 @@ class _AddDeviceScreenState extends State<AddDeviceScreen>
                     child: child,
                   );
                 },
-                child: SvgPicture.asset(
-                  'assets/ten/radar.svg',
-                  height: getProportionateScreenWidth(200),
-                  width: getProportionateScreenWidth(200),
+                child: Container(
+                  width: double.infinity,
+                  height: 200,
+                  child: Image.asset('assets/ten/radars.png'),
                 ),
               ),
               SizedBox(

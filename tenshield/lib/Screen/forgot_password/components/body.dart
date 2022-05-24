@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tenshield/Components/snackBar.dart';
 import 'package:tenshield/constant/constant.dart';
 
 import 'package:tenshield/components/form_error.dart';
@@ -54,10 +55,6 @@ class _ForgotPassFormState extends State<ForgotPassForm> {
   List<String> errors = [];
   String email = '';
 
-  sendPasswordLink() {
-    firebase.forgetPassword(email).thenn((res) {});
-  }
-
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -69,35 +66,22 @@ class _ForgotPassFormState extends State<ForgotPassForm> {
             keyboardType: TextInputType.emailAddress,
             onSaved: (newValue) => email = newValue.toString(),
             onChanged: (value) {
-              if (value.isNotEmpty && errors.contains(XEmailNullError)) {
-                setState(() {
-                  errors.remove(XEmailNullError);
-                });
-              } else if (emailValidatorRegExp.hasMatch(value) &&
-                  errors.contains(XInvalidEmailError)) {
-                setState(() {
-                  errors.remove(XInvalidEmailError);
-                });
-              }
+              email = value;
               return null;
             },
             validator: (value) {
-              if (value!.isEmpty && !errors.contains(XEmailNullError)) {
-                setState(() {
-                  errors.add(XEmailNullError);
-                });
-              } else if (!emailValidatorRegExp.hasMatch(value) &&
-                  !errors.contains(XInvalidEmailError)) {
-                setState(() {
-                  errors.add(XInvalidEmailError);
-                });
+              if (value!.isEmpty) {
+                return XEmailNullError;
+              } else if (!emailValidatorRegExp.hasMatch(value)) {
+                return XInvalidEmailError;
               }
+
               return null;
             },
             decoration: InputDecoration(
               isDense: true,
               labelText: "Enter your email",
-              fillColor: Colors.grey[300],
+              fillColor: XBlack,
               filled: true,
 
               border: new OutlineInputBorder(
@@ -127,7 +111,7 @@ class _ForgotPassFormState extends State<ForgotPassForm> {
               contentPadding:
                   new EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
               labelStyle:
-                  TextStyle(color: XGrey, fontFamily: "Roboto", fontSize: 13),
+                  TextStyle(color: XBlack, fontFamily: "Roboto", fontSize: 13),
 
               // If  you are using latest version of flutter then lable text and hint text shown like this
               // if you r using flutter less then 1.20.* then maybe this is not working properly
@@ -141,7 +125,10 @@ class _ForgotPassFormState extends State<ForgotPassForm> {
               text: "Continue",
               press: () {
                 if (_formKey.currentState!.validate()) {
-                  sendPasswordLink();
+                  firebase.forgetPassword(email).then((value) {
+                    loadSnackBar(
+                        context, 'password reset link sent to your email');
+                  });
                 }
               },
             ),

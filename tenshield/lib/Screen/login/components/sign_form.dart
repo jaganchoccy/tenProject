@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tenshield/Components/default_button.dart';
+import 'package:tenshield/Components/providerState.dart';
 import 'package:tenshield/Components/snackBar.dart';
+import 'package:tenshield/Model/user_model.dart';
 import 'package:tenshield/Screen/forgot_password/forgot_password_screen.dart';
 import 'package:tenshield/Screen/home/home_screen.dart';
 import 'package:tenshield/Services/auth.dart';
@@ -36,10 +38,16 @@ class _SignFormState extends State<SignForm> {
       } else if (res == "error") {
         loadSnackBar(context, 'something wrong, please check the network');
       } else {
+        var userdetail = new UserModel();
+        userdetail.userName = res?.displayName;
+        userdetail.mail = res?.email;
+
+        userdetail.uid = res?.uid;
+        UserChangeNotifier().setCurrentUser = userdetail;
         Navigator.of(context).pushAndRemoveUntil(
             MaterialPageRoute(
                 builder: (BuildContext context) =>
-                    HomeScreen(currentUser: res, homeIndexPage: 0)),
+                    HomeScreen(homeIndexPage: 0)),
             (Route<dynamic> route) => false);
       }
     });

@@ -7,6 +7,6 @@ import 'package:tenshield/Screen/sign_up/sign_up_screen.dart';
 
 final Map<String, WidgetBuilder> routes = {
   SignInScreen.routeName: (context) => SignInScreen(),
-  // SignUpScreen.routeName: (context) => SignUpScreen(),
-  // ForgotPasswordScreen.routeName: (context) => ForgotPasswordScreen(),
+  SignUpScreen.routeName: (context) => SignUpScreen(),
+  ForgotPasswordScreen.routeName: (context) => ForgotPasswordScreen(),
 };

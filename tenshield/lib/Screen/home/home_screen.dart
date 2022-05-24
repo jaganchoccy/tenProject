@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tenshield/Screen/Device/addDevice.dart';
+import 'package:tenshield/Screen/Profile/profileScreen.dart';
+import 'package:tenshield/Screen/chart/chartScreen.dart';
 import 'package:tenshield/components/providerState.dart';
 import 'package:tenshield/constant/constant.dart';
 
@@ -8,9 +10,8 @@ import 'package:tenshield/constant/constant.dart';
 // import 'package:tenshield/screens/Trips/trip_screen.dart';
 
 class HomeScreen extends StatefulWidget {
-  final currentUser;
   final int homeIndexPage;
-  HomeScreen({required this.currentUser, required this.homeIndexPage});
+  HomeScreen({required this.homeIndexPage});
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -105,8 +106,8 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               child: PageView(
                 children: [
-                  Text(''),
-                  Text('')
+                  ChatScreen(user: UserChangeNotifier().getCurrentUser),
+                  ProfileScreen(user: UserChangeNotifier().getCurrentUser),
                   //GoogleAdMob(),
                   //MembersScreen(currentUser: widget.currentUser),
                 ],
